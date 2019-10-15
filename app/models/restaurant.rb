@@ -3,9 +3,11 @@ class Restaurant
   
   attr_reader :name
 
+  #Initialized with a full name
   def initialize(name)
     @name = name
     @@all << self
+    #adds the instance of itself to an array of all restaurants
   end
 
   ## CLASS METHODS

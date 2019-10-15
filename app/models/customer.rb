@@ -3,10 +3,12 @@ class Customer
   
   attr_reader :first_name, :last_name
 
+  #Initialized with a first name/ last name
   def initialize(first_name, last_name)
     @first_name = first_name
     @last_name  = last_name
     @@all << self
+    #adds the instance of itself to an array of customers
   end
 
   ## CLASS METHODS
@@ -23,13 +25,15 @@ class Customer
 
   def self.find_by_name(name)
     Customer.all.find do |customer|
+      #redundant with method full_name
       "#{customer.first_name} #{customer.last_name}" == name
+      #concatenates first name and last name to find a matching full name
     end
   end
 
   def self.find_all_by_first_name(name)
     Customer.all.select do |customer|
-      "#{customer.first_name}" == name
+      customer.first_name == name
     end
   end
 
