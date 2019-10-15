@@ -52,4 +52,8 @@ class Customer
   def self.find_by_first_name(first_name)
     all.select {|customer| customer.first_name == first_name}
   end
+
+  def self.all_names
+    all.collect {|customer| customer.full_name}
+  end
 end
