@@ -39,7 +39,7 @@ class Restaurant
 
   def longest_review
     c_arr = reviews.map { |review| review.content }
-    reviews[c_arr.index(c_arr.max_by { |review| review.length })]
+    reviews[c_arr.index(c_arr.max_by { |review| review.length })] #return the content array at the index in which the longest review is found
   end
 
 end
